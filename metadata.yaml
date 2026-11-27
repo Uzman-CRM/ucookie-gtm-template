@@ -1,11 +1,7 @@
 homepage: "https://ucookie.com.tr"
 documentation: "https://github.com/Uzman-CRM/ucookie-gtm-template/blob/master/README.md"
 versions:
-  - sha: 5b327da2b42ad7e51cc776f5fd0ba13452ebef31
-    changeNotes: Fix the global variable permission needed by setInWindow.
-  - sha: 23a05e02beb332b746fda72a10c2645bda986ea2
-    changeNotes: Send the Google developer ID issued to UCookie.
-  # Replace the sha with the full commit sha of the commit (after pushing) that
-  # contains this version of template.tpl. See README.md.
-  - sha: 35b514f0d3146ec8425c90ab5009ffa20cfb3c68
+  # Newest first. Each sha is the full commit sha of a commit that contains that
+  # version of template.tpl. See README.md.
+  - sha: 2915a8e5cf1bdb28914b4e5471e3c57467d5ca92
     changeNotes: Initial release.
