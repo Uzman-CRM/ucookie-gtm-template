@@ -1,6 +1,8 @@
 homepage: "https://ucookie.com.tr"
 documentation: "https://github.com/Uzman-CRM/ucookie-gtm-template/blob/master/README.md"
 versions:
+  - sha: 5b327da2b42ad7e51cc776f5fd0ba13452ebef31
+    changeNotes: Fix the global variable permission needed by setInWindow.
   - sha: 23a05e02beb332b746fda72a10c2645bda986ea2
     changeNotes: Send the Google developer ID issued to UCookie.
   # Replace the sha with the full commit sha of the commit (after pushing) that
