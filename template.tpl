@@ -749,6 +749,15 @@ scenarios:
     assertApi('injectScript').wasNotCalled();
     assertApi('gtmOnFailure').wasCalled();
 
+setup: |-
+  const mockData = {
+    scriptUrl: 'https://fe.v2.ucookie.com.tr/ucookie.js',
+    waitForUpdate: '500',
+    adsDataRedaction: true,
+    urlPassthrough: false,
+    regionSettings: []
+  };
+
 
 ___NOTES___
 
