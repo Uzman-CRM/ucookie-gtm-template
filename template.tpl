@@ -325,7 +325,8 @@ if (!isAllowedUrl(data.scriptUrl)) {
   // --- Returning visitor: restore the stored decision ---------------------
   const restoreConsent = function() {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return;
+    // the widget always stores a JSON object; skip anything else without a parse error in the console
+    if (getType(raw) !== 'string' || raw.charAt(0) !== '{') return;
     const store = JSON.parse(raw);
     if (getType(store) !== 'object') return;
     if (getType(store.accepted) !== 'array' || getType(store.cats) !== 'array') return;
