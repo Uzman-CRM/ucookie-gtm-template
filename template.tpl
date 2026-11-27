@@ -242,10 +242,9 @@ const getType = require('getType');
 const JSON = require('JSON');
 const logToConsole = require('logToConsole');
 
-// Developer ID registered for this template by Google. Leave empty until one
-// has been issued; when set, it is sent with every Consent Mode call via
-// gtagSet('developer_id.<ID>', true).
-const DEVELOPER_ID = '';
+// Google Consent Mode developer ID issued to the UCookie CMP; sent on every
+// page via gtagSet('developer_id.<ID>', true).
+const DEVELOPER_ID = 'dMmNlYm';
 
 const STORAGE_KEY = 'ucookie';
 const ALL_SIGNALS = [
@@ -679,6 +678,7 @@ scenarios:
     runCode(mockData);
     assertApi('gtagSet').wasCalledWith('ads_data_redaction', true);
     assertApi('gtagSet').wasCalledWith('url_passthrough', true);
+    assertApi('gtagSet').wasCalledWith('developer_id.dMmNlYm', true);
 - name: ads_data_redaction is false when the box is unchecked
   code: |-
     mockData.scriptUrl = 'https://fe.v2.ucookie.com.tr/ucookie.js';
