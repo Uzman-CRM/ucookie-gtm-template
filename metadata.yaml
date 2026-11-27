@@ -3,5 +3,5 @@ documentation: "https://github.com/Uzman-CRM/ucookie-gtm-template/blob/master/RE
 versions:
   # Replace the sha with the full commit sha of the commit (after pushing) that
   # contains this version of template.tpl. See README.md.
-  - sha: 0000000000000000000000000000000000000000
+  - sha: 35b514f0d3146ec8425c90ab5009ffa20cfb3c68
     changeNotes: Initial release.
