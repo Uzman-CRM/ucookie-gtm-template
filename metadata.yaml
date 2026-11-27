@@ -1,0 +1,7 @@
+homepage: "https://ucookie.com.tr"
+documentation: "https://github.com/Uzman-CRM/ucookie-gtm-template/blob/master/README.md"
+versions:
+  # Replace the sha with the full commit sha of the commit (after pushing) that
+  # contains this version of template.tpl. See README.md.
+  - sha: 0000000000000000000000000000000000000000
+    changeNotes: Initial release.
