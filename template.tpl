@@ -628,7 +628,7 @@ scenarios:
     mockData.scriptUrl = 'https://fe.v2.ucookie.com.tr/ucookie.js';
     mockData.waitForUpdate = '500';
     mock('injectScript', function(url, onSuccess, onFailure, token) { onSuccess(); });
-    mock('localStorage', {getItem: function() { return null; }});
+    mockObject('localStorage', {getItem: function() { return null; }});
     runCode(mockData);
     assertApi('setDefaultConsentState').wasCalledWith({
       ad_storage: 'denied',
@@ -655,7 +655,7 @@ scenarios:
       personalization_storage: 'denied',
       security_storage: 'granted'
     }];
-    mock('localStorage', {getItem: function() { return null; }});
+    mockObject('localStorage', {getItem: function() { return null; }});
     runCode(mockData);
     assertApi('setDefaultConsentState').wasCalledWith({
       ad_storage: 'granted',
@@ -674,7 +674,7 @@ scenarios:
     mockData.waitForUpdate = '500';
     mockData.adsDataRedaction = true;
     mockData.urlPassthrough = true;
-    mock('localStorage', {getItem: function() { return null; }});
+    mockObject('localStorage', {getItem: function() { return null; }});
     runCode(mockData);
     assertApi('gtagSet').wasCalledWith('ads_data_redaction', true);
     assertApi('gtagSet').wasCalledWith('url_passthrough', true);
@@ -685,7 +685,7 @@ scenarios:
     mockData.waitForUpdate = '500';
     mockData.adsDataRedaction = false;
     mockData.urlPassthrough = false;
-    mock('localStorage', {getItem: function() { return null; }});
+    mockObject('localStorage', {getItem: function() { return null; }});
     runCode(mockData);
     assertApi('gtagSet').wasCalledWith('ads_data_redaction', false);
     assertApi('gtagSet').wasCalledWith('url_passthrough', false);
@@ -694,7 +694,7 @@ scenarios:
     mockData.scriptUrl = 'https://fe.v2.ucookie.com.tr/ucookie.js';
     mockData.waitForUpdate = '500';
     mock('getTimestampMillis', 1000);
-    mock('localStorage', {getItem: function() {
+    mockObject('localStorage', {getItem: function() {
       return '{"accepted":["2"],"cats":[{"id":"1","tag":"","isRequired":true},{"id":"2","tag":"tracking","isRequired":false},{"id":"3","tag":"targeting","isRequired":false}],"exp":5000}';
     }});
     runCode(mockData);
@@ -713,7 +713,7 @@ scenarios:
     mockData.waitForUpdate = '500';
     mock('getTimestampMillis', 1000);
     mock('injectScript', function(url, onSuccess, onFailure, token) { onSuccess(); });
-    mock('localStorage', {getItem: function() { return 'not json {'; }});
+    mockObject('localStorage', {getItem: function() { return 'not json {'; }});
     runCode(mockData);
     assertApi('updateConsentState').wasNotCalled();
     assertApi('gtmOnSuccess').wasCalled();
@@ -722,7 +722,7 @@ scenarios:
     mockData.scriptUrl = 'https://fe.v2.ucookie.com.tr/ucookie.js';
     mockData.waitForUpdate = '500';
     mock('getTimestampMillis', 9000);
-    mock('localStorage', {getItem: function() {
+    mockObject('localStorage', {getItem: function() {
       return '{"accepted":["2"],"cats":[{"id":"2","tag":"tracking","isRequired":false}],"exp":5000}';
     }});
     runCode(mockData);
@@ -736,7 +736,7 @@ scenarios:
       injected = url + '|' + token;
       onSuccess();
     });
-    mock('localStorage', {getItem: function() { return null; }});
+    mockObject('localStorage', {getItem: function() { return null; }});
     runCode(mockData);
     assertApi('setInWindow').wasCalledWith('__ucookieGtm', true, true);
     assertThat(injected).isEqualTo('https://fe.v2.ucookie.com.tr/ucookie.js|ucookie');
