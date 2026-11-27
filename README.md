@@ -51,7 +51,7 @@ Non-Google tags should use the same Consent Settings so they respect the visitor
 
 ## Permissions
 
-The template requests access to: the seven Consent Mode types (read and write), `ads_data_redaction`, `url_passthrough` and `developer_id.*` data layer keys, injecting scripts from `https://fe.v2.ucookie.com.tr/*` and `https://*.ucookie.com.tr/*`, the global `__ucookieGtm` (write), local storage key `ucookie` (read) and debug logging.
+The template requests access to: the seven Consent Mode types (read and write), `ads_data_redaction`, `url_passthrough` and `developer_id.*` data layer keys, injecting scripts from `https://fe.v2.ucookie.com.tr/*` and `https://*.ucookie.com.tr/*`, the global `__ucookieGtm` (read and write; `setInWindow` needs both), local storage key `ucookie` (read) and debug logging.
 
 ## Submitting to the Community Template Gallery
 
